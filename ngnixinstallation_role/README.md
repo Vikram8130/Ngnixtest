@@ -1,4 +1,4 @@
-#### All the information is mentioned below for the ngnixinstallation_role that I have tried to create.
+#### All the information is mentioned below for the ngnixinstallation_role that I have tried to created.
 
 1. /etc/ansible/roles/ngnixinstallation_role/tasks/main.yml:
 
