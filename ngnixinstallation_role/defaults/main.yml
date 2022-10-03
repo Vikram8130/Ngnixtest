@@ -1,0 +1,4 @@
+---
+# defaults file for ngnixinstallation_role
+nginx_version: nginx/1.12.2
+nginx_custom_directory: /var/www/example_domain

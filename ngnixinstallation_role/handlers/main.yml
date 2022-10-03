@@ -1,0 +1,6 @@
+---
+# handlers file for ngnixinstallation_role
+- name: Start the Nginx service
+  service:
+    name: nginx
+    state: started
