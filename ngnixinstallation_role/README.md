@@ -1,5 +1,11 @@
 #### All the information is mentioned below for the ngnixinstallation_role that I have tried to created.
 
+Ansible Roles enable us to reuse and share our Ansible code efficiently. They provide a well-defined framework and structure for setting our tasks,  
+variables, handlers, metadata, templates, and other files. This way, we can reference and call them in our playbooks with just a few lines of  
+code while we can reuse the same roles over many projects without the need to duplicate our code. 
+Similarly, the role ( ngnixinstallation_role) that I have created can be easily called thrugh the playbook ngnix.yml and ngnix installation can be easily achieved on multiple servers.
+
+
 1. /etc/ansible/roles/ngnixinstallation_role/tasks/main.yml:
 
 Here, I have define a handful of tasks that update the operating system, install an Nginx web server, and set up a minimal custom configuration
