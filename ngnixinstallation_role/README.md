@@ -1,38 +1,29 @@
-Role Name
-=========
+#### All the information is mentioned below for the ngnixinstallation_role that I have tried to create.
 
-A brief description of the role goes here.
+1. /etc/ansible/roles/ngnixinstallation_role/tasks/main.yml:
 
-Requirements
-------------
+Here, I have define a handful of tasks that update the operating system, install an Nginx web server, and set up a minimal custom configuration
 
-Any pre-requisites that may not be covered by Ansible itself or the role should be mentioned here. For instance, if the role uses the EC2 module, it may be a good idea to mention in this section that the boto package is required.
+2. /etc/ansible/roles/ngnixinstallation_role/defaults/main.yml:-
 
-Role Variables
---------------
+Here I have set default values for the variables used in the tasks. If there is no other definition for these variables, they will be picked up and used by the role, but usually, they are meant to be easily overwritten.
 
-A description of the settable variables for this role should go here, including any variables that are in defaults/main.yml, vars/main.yml, and any variables that can/should be set via parameters to the role. Any variables that are read from other roles and/or the global scope (ie. hostvars, group vars, etc.) should be mentioned here as well.
+3. /etc/ansible/roles/ngnixinstallation_role/vars/main.yml:-
 
-Dependencies
-------------
+Here I have defined values with higher precedence that aren’t meant to be overridden at the playbook level. Here, we override the default variable that defines the Nginx custom directory.
 
-A list of other roles hosted on Galaxy should go here, plus any details in regards to parameters that may need to be set for other roles, or variables that are used from other roles.
+4. /etc/ansible/roles/ngnixinstallation_role/handlers/main.yml:-
 
-Example Playbook
-----------------
+In this handlers directory, I have defined a handler that will be triggered to Start the Nginx service.
 
-Including an example of how to use your role (for instance, with variables passed in as parameters) is always nice for users too:
+5. /etc/ansible/roles/ngnixinstallation_role/templates/nginx.conf.j2:-
 
-    - hosts: servers
-      roles:
-         - { role: username.rolename, x: 42 }
+In this templates directory, I have tried to leverage a Jinja2 template file for the Nginx configuration that gets the Nginx custom directory value from one of our previously defined variables.
 
-License
--------
+6. /etc/ansible/roles/ngnixinstallation_role/files/index.html:-
 
-BSD
+In the files directory, I have defined a static file index.html that will serve as our static demo webpage.
 
-Author Information
-------------------
+7. /etc/ansible/roles/ngnixinstallation_role/meta/main.yml:-
 
-An optional section for the role authors to include contact information, or a website (HTML is not allowed).
+Here I have used the meta directory to add metadata and information about the role. Any role dependencies by other roles go here as well.
